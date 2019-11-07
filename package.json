@@ -4,7 +4,11 @@
   "description": "Trabajo Final ECliente",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "arreglar-estilo": "npx eslint --fix ./src/",
+    "estilo": "npx eslint ./src/",
+    "traducir": "npx babel src -d out",
+    "minimizar": "npx uglifyjs \"out/*\" --cm -o \"dest/archivo.min.js\"",
+    "build": "npm run arreglar-estilo && npm run estilo && npm run traducir && npm run minimizar"
   },
   "repository": {
     "type": "git",
