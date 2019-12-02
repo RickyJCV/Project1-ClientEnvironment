@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="clases.js"></script>
+    <script src="funciones.js"></script>
+    <title>Página de Busqueda</title>
+</head>
+
+<body>
+    <!--
+    Página de búsqueda:
+    * Función que  deberá devolver los elementos filtrados por dos campos especificados por el alumno en el código.
+    * Función que deberá devolver un elemento que sea similiar a otro. Los detalles que determinan si en elemento es 
+      similar a otro deberá especificarlo el alumno en el código.
+
+    * Función que busca los elementos asociados a un usuario.
+    * Una función definida por el alumno y que encaje en la funcionalidad de la página.
+    -->
+
+    <div id="filtrar">
+        <label for="marca">Filtrar por marca</label>
+        <select id="marca">
+            <option value="Kaya">Kaya</option>
+            <option value="Khalil-mamoon">khalil-mamoon</option>
+            <option value="Caesar">Caesar</option>
+            <option value="Mig">Mig</option>
+            <option value="Starbuzz">Starbuzz</option>
+        </select>
+        <label for="precio">Precio</label>
+        <input type="text" id="precio">
+
+        <button type="submit" id="buscar">Buscar</button><br>
+
+        <ul id="lista_cachimbas">
+
+        </ul>
+
+    </div>
+
+</body>
+
+</html>
