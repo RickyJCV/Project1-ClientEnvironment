@@ -13,11 +13,14 @@
 <body>
     <!--
     Página de búsqueda:
+
     * Función que  deberá devolver los elementos filtrados por dos campos especificados por el alumno en el código.
+
     * Función que deberá devolver un elemento que sea similiar a otro. Los detalles que determinan si en elemento es 
       similar a otro deberá especificarlo el alumno en el código.
 
     * Función que busca los elementos asociados a un usuario.
+
     * Una función definida por el alumno y que encaje en la funcionalidad de la página.
     -->
 
@@ -38,7 +41,22 @@
         <ul id="lista_cachimbas">
 
         </ul>
+    </div>
+    <div id="similar">
+        <label for="marca2">Similar por marca</label>
+        <select id="marca2">
+            <option value="Kaya">Kaya</option>
+            <option value="Khalil-mamoon">khalil-mamoon</option>
+            <option value="Caesar">Caesar</option>
+            <option value="Mig">Mig</option>
+            <option value="Starbuzz">Starbuzz</option>
+        </select>
 
+        <button type="submit" id="buscarMarcaSimilar">Buscar</button><br>
+
+        <ul id="lista_similar">
+
+        </ul>
     </div>
 
 </body>
