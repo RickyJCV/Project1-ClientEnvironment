@@ -19,7 +19,7 @@ class cachimba {
 }
 
 class voto {
-    constructor(cachimba, persona, puntuacion, observaciones) {
+    constructor(persona, cachimba, puntuacion, observaciones) {
         this._cachimba = cachimba;
         this._persona = persona; //Aqui le pasamos el array de persona
         this._puntuacion = puntuacion;
@@ -36,6 +36,7 @@ class persona {
         this._nombre = nombre;
         this._edad = edad;
         this._codigoPostal = codigoPostal;
+        this._votos = []; 
     }
     get nombre() { return this._nombre; }
     get edad() { return this._edad; }
@@ -43,6 +44,10 @@ class persona {
     set nombre(nombre) { this._nombre = nombre; }
     set edad(edad) { this._edad = edad; }
     set codigoPostal(codigoPostal) { this._codigoPostal = codigoPostal; }
+    set(votos) { this._votos = votos; }
+    addVoto(voto) {
+        this._votos.push(voto);
+    }
 
 }
 
@@ -76,23 +81,19 @@ let cachimba9 = new cachimba("155", "Kaya", "PN330");
 let cachimba10 = new cachimba("68", "Starbuzz", "Ultimate");
 
 let voto1 = new voto(persona1, cachimba1, true, "Muy bonita");
-cachimba1.addVoto(voto1);
-// persona1.addVoto(voto1);
 
 let voto2 = new voto(persona2, cachimba2, false, "Muy fea");
-cachimba2.addVoto(voto2);
-// persona2.addVoto(voto2);
+
 
 let voto3 = new voto(persona3, cachimba3, true, "Elegante");
-cachimba3.addVoto(voto3);
-// persona3.addVoto(voto3);
+
 
 let voto4 = new voto(persona1, cachimba4, true, "Exquisita");
-cachimba4.addVoto(voto4);
-// persona1.addVoto(voto4);
+
 
 let voto5 = new voto(persona2, cachimba4, false, "Horrorosa");
-cachimba4.addVoto(voto5);
-// persona2.addVoto(voto5);
 
-let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10]
+
+let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10];
+let listaPersona = [persona1, persona2, persona3];
+let listaVoto =[voto1,voto2,voto3,voto4,voto5];
