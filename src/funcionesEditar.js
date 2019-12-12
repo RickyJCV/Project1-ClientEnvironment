@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let botonCrearElemento = document.getElementById("crearElemento2");
     botonCrearElemento.addEventListener("click", validarFormulario);
 
@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let inputUsuario = document.getElementById("cambiar");
     inputUsuario.addEventListener("click", cambiarUsuario);
+
+    let botonCrearUsuario = document.getElementById("crearUsuario");
+    botonCrearUsuario.addEventListener("click", crearUsuario);
+
+    let edad = document.getElementById("edad");
+    edad.addEventListener("keyup", validarEdad);
 })
 
 function crearElemento() {
@@ -165,4 +171,66 @@ function cambiarUsuario() {
     listaVoto[id].persona = listaPersona[usuarios];
     filtrarVotos();
 
+}
+
+function crearUsuario() {
+    let nombre = document.getElementById("nombre").value;
+    let edad = document.getElementById("edad").value;
+    let codigo = document.getElementById("codigo").value;
+
+    if (validarNombre() && validarCodigo() && validarEdad()) {
+        crearPersona(nombre, edad, codigo);
+        filtrarVotos();
+        alert("Usuario creado correctamente");
+    }
+}
+function validarNombre() {
+    let esCorrecto = true;
+    let nombre = document.getElementById("nombre").value;
+    let expresion = /^[a-zA-Z]+$/g;
+    if (!expresion.test(nombre) || nombre === "") {
+        alert("Nombre no puede ser");
+        esCorrecto = false;
+    }
+    return esCorrecto;
+}
+function validarCodigo() {
+    let esCorrecto = true;
+    let codigo = document.getElementById("codigo").value;
+    let expresion = /^(?:0[1-9]\d{3}|[1-4]\d{4}|5[0-2]\d{3})$/;
+
+    if (!expresion.test(codigo) || codigo === "") {
+        alert("codigo postal no valido");
+        esCorrecto = false;
+    }
+    return esCorrecto;
+}
+
+function validarEdad(event) {
+    let esCorrecto = true;
+    let edad = document.getElementById("edad");
+    let valor = edad.value.trim();
+    let listaErrores = document.getElementById("erroresEdad");
+    listaErrores.innerHTML = "";
+    edad.classList.remove("inputErroneo");
+    edad.classList.remove("inputCorrecto");
+
+    if (!/^[0-9]+$/.test(valor)) {
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "SOLO DEBEN USARSE NÚMEROS";
+        listaErrores.appendChild(divError);
+    }
+    if (valor < 18) {
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "DEBE SER MAYOR DE EDAD";
+        listaErrores.appendChild(divError);
+    }
+    if (esCorrecto) {
+        edad.classList.add("inputCorrecto");
+    } else {
+        edad.classList.add("inputErroneo");
+    }
+    return esCorrecto;
 }
