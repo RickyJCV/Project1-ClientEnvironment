@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     let botonCrearElemento = document.getElementById("crearElemento2");
     botonCrearElemento.addEventListener("click", validarFormulario);
 
@@ -17,10 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
     inputUsuario.addEventListener("click", cambiarUsuario);
 
     let botonCrearUsuario = document.getElementById("crearUsuario");
-    botonCrearUsuario.addEventListener("click", crearUsuario);
+    botonCrearUsuario.addEventListener("click", validarFormulario2);
 
     let edad = document.getElementById("edad");
     edad.addEventListener("keyup", validarEdad);
+
+    let nombre = document.getElementById("nombre");
+    nombre.addEventListener("keyup", validarNombre);
+
+    let codigo = document.getElementById("codigo");
+    codigo.addEventListener("keyup", validarCodigo);
 })
 
 function crearElemento() {
@@ -31,6 +37,17 @@ function crearElemento() {
 
     crearCachimba(inputPrecio, inputMarca, inputModelo);
     alert("CACHIMBA CREADA");
+
+}
+
+function crearUsuario() {
+    let inputNombre = document.getElementById("nombre").value; //El input del precio
+    let inputEdad = document.getElementById("edad").value; //El input de marca
+    let inputCodigo = document.getElementById("codigo").value; //El input del modelo
+
+    crearPersona(inputNombre, inputEdad, inputCodigo);
+    filtrarVotos();
+    alert("USUARIO CREADO");
 
 }
 
@@ -173,35 +190,68 @@ function cambiarUsuario() {
 
 }
 
-function crearUsuario() {
-    let nombre = document.getElementById("nombre").value;
-    let edad = document.getElementById("edad").value;
-    let codigo = document.getElementById("codigo").value;
+function validarFormulario2(event) {
+    event.preventDefault();
 
-    if (validarNombre() && validarCodigo() && validarEdad()) {
-        crearPersona(nombre, edad, codigo);
-        filtrarVotos();
-        alert("Usuario creado correctamente");
+    let esFormularioCorrecto = false;
+    let esCorrectoNombre = validarNombre();
+    let esCorrectoEdad = validarEdad();
+    let esCorrectoCodigo = validarCodigo();
+    if (esCorrectoNombre &&
+        esCorrectoEdad &&
+        esCorrectoCodigo) {
+        esFormularioCorrecto = true;
+    }
+    if (esFormularioCorrecto) {
+        crearUsuario();
     }
 }
+
+
 function validarNombre() {
     let esCorrecto = true;
-    let nombre = document.getElementById("nombre").value;
+    let nombre = document.getElementById("nombre");
+    let valor = nombre.value.trim();
+    let listaErrores = document.getElementById("erroresNombre");
+    listaErrores.innerHTML = "";
+    nombre.classList.remove("inputErroneo");
+    nombre.classList.remove("inputCorrecto");
     let expresion = /^[a-zA-Z]+$/g;
-    if (!expresion.test(nombre) || nombre === "") {
-        alert("Nombre no puede ser");
+    if (!expresion.test(valor) || valor === "") {
         esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "SOLO DEBEN USARSE LETRAS";
+        listaErrores.appendChild(divError);
+    }
+    if (esCorrecto) {
+        nombre.classList.add("inputCorrecto");
+    } else {
+        nombre.classList.add("inputErroneo");
     }
     return esCorrecto;
 }
+
 function validarCodigo() {
     let esCorrecto = true;
-    let codigo = document.getElementById("codigo").value;
+    let codigo = document.getElementById("codigo");
+    let valor = codigo.value.trim();
+    let listaErrores = document.getElementById("erroresCodigo");
+    listaErrores.innerHTML = "";
+    codigo.classList.remove("inputErroneo");
+    codigo.classList.remove("inputCorrecto");
     let expresion = /^(?:0[1-9]\d{3}|[1-4]\d{4}|5[0-2]\d{3})$/;
 
-    if (!expresion.test(codigo) || codigo === "") {
-        alert("codigo postal no valido");
+    if (!expresion.test(valor) || valor === "") {
         esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "ESE CODIGO POSTAL NO EXISTE";
+        listaErrores.appendChild(divError);
+    }
+
+    if (esCorrecto) {
+        codigo.classList.add("inputCorrecto");
+    } else {
+        codigo.classList.add("inputErroneo");
     }
     return esCorrecto;
 }
