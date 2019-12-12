@@ -109,3 +109,8 @@ function crearCachimba(precio, marca, modelo) {
     let Cachimba = new cachimba(precio, marca, modelo)
     listadoCachimbas.push(Cachimba);
 }
+
+function crearPersona(nombre, edad, codigoPostal) {
+    let Persona = new persona(nombre, edad, codigoPostal);
+    listaPersona.push(Persona);
+}

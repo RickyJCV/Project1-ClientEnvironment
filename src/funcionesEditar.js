@@ -160,7 +160,6 @@ function cambiarUsuario() {
     let votos = document.getElementById("votos");
     let usuario = document.getElementById("usuario");
     let id = votos.options[votos.selectedIndex].id;
-    let voto = listaVoto[id].persona.nombre;
     let usuarios = usuario.options[usuario.selectedIndex].id
 
     listaVoto[id].persona = listaPersona[usuarios];
