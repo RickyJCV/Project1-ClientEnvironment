@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="clases.js"></script>
     <script src="funciones.js"></script>
+    <link rel="stylesheet" href="estiloNav.css">
     <title>Página de Busqueda</title>
 </head>
 
@@ -23,7 +24,13 @@
 
     * Una función definida por el alumno y que encaje en la funcionalidad de la página.
     -->
-    <a href="edit.html">Editar</a>
+
+    <ul class="listaDesord">
+        <li class="lista"><a class="active" href="index.html">Búsqueda</a></li>
+        <li class="lista"><a href="edit.html">Edición</a></li>
+        <li class="lista"><a href="#contact">Gestión</a></li>
+        <li class="lista"><a href="#about">Usuario</a></li>
+    </ul>
 
     <div id="filtrar">
         <label for="marca">Filtrar por marca</label>
@@ -72,7 +79,7 @@
     </div>
 
     <div id="precio">
-        <label for="precio">Indique el prcio max</label>
+        <label for="precio">Indique el precio max</label>
         <input type="number" id="precio2">
         <button type="submit" id="botonPrecio">Buscar</button>
 
