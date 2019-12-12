@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
     <script src="clases.js"></script>
-    <script src="funciones.js"></script>
+    <script src="funcionesEditar.js"></script>
     <title>Editar</title>
 </head>
+
 <body>
-    
+
     <!--* Página de Edición:
     * Función que cree o edite el elemento principal de la página.
     * Función que valide todos los campos de creación del elemento principal de la página. El alumno debe detallar los
@@ -21,13 +24,41 @@
     <div id="crearElemento">
         <label for="nombre">Precio</label>
         <input type="text" id="precio">
+        <div id="erroresPrecio"></div>
         <label for="marca">Marca</label>
         <input type="text" id="marca">
+        <div id="erroresMarca"></div>
         <label for="modelo">Modelo</label>
         <input type="text" id="modelo">
+        <div id="erroresModelo"></div>
 
-        <button type="submit" id="crearElemento">Crear Elemento</button>
+        <button type="submit" id="crearElemento2">Crear Elemento</button>
+
+    </div>
+    <div id="meterUsuario">
+        <label for="votos">Voto a cambiar</label>
+        <select id="votos"></select>
+        <br>
+        <br>
+        <label for="usuario">Usuario a elegir</label>
+        <select id="usuario"></select>
+        <button id="cambiar">Cambiar usuario</button>
+    </div>
+
+    <div id="crearElemento">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <div id="erroresPrecio"></div>
+        <label for="Edad">Edad</label>
+        <input type="text" id="edad">
+        <div id="erroresMarca"></div>
+        <label for="Postal">Codigo Postal</label>
+        <input type="text" id="Codigo">
+        <div id="erroresModelo"></div>
+
+        <button type="submit" id="crearUsuario">Crear Usuario</button> DANI ESTE LO HACES TU POR PUTO
 
     </div>
 </body>
+
 </html>

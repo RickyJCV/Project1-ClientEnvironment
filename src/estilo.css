@@ -1,0 +1,19 @@
+.error {
+    color: red;
+}
+
+.inputErroneo {
+    border: 1px solid red;
+    color: white;
+    background-color: pink;
+}
+
+.inputCorrecto {
+    border: 1px solid green;
+    color: white;
+    background-color: aquamarine;
+}
+
+* {
+    padding: 5px;
+}

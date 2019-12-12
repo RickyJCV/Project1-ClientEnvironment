@@ -36,7 +36,7 @@ class persona {
         this._nombre = nombre;
         this._edad = edad;
         this._codigoPostal = codigoPostal;
-        this._votos = []; 
+        this._votos = [];
     }
     get nombre() { return this._nombre; }
     get edad() { return this._edad; }
@@ -96,4 +96,16 @@ let voto5 = new voto(persona2, cachimba4, false, "Horrorosa");
 
 let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10];
 let listaPersona = [persona1, persona2, persona3];
-let listaVoto =[voto1,voto2,voto3,voto4,voto5];
+let listaVoto = [voto1, voto2, voto3, voto4, voto5];
+
+function crearVoto(persona, cachimba, puntuacion, observaciones) {
+    let voto = new Voto(persona, cachimba, puntuacion, observaciones);
+    persona.addVoto(voto);
+    cachimba.addVoto(voto);
+    listaVoto.push(voto);
+}
+
+function crearCachimba(precio, marca, modelo) {
+    let Cachimba = new cachimba(precio, marca, modelo)
+    listadoCachimbas.push(Cachimba);
+}
