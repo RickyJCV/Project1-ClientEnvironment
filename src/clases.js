@@ -109,10 +109,10 @@ let listaPersona = [persona1, persona2, persona3];
 let listaVoto = [voto1, voto2, voto3, voto4, voto5, voto6];
 
 function crearVoto(persona, cachimba, puntuacion, observaciones) {
-    let voto = new Voto(persona, cachimba, puntuacion, observaciones);
-    persona.addVoto(voto);
-    cachimba.addVoto(voto);
-    listaVoto.push(voto);
+    let Voto = new voto(persona, cachimba, puntuacion, observaciones);
+    persona.addVoto(Voto);
+    cachimba.addVoto(Voto);
+    listaVoto.push(Voto);
 }
 
 function crearCachimba(precio, marca, modelo) {

@@ -17,7 +17,9 @@
 <!--*
     Página del Usuario:
     * Función que permita a un usuario votar y opinar sobre el elemento.
+        añade un voto a una cachimba
     * Función que permitar obtener los elementos que ha votado un usuario.
+        devuelve los usarios que han votado una cachimba
     * Función que obtenga los elementos similares a los elementos favoritos del usuario.
     * Una función definida por el alumno y que encaje en la funcionalidad de la página. -->
 
@@ -31,20 +33,30 @@
     <div id="funcion1">
 
         <select id="usuario">
-            <option value="Daniel">Daniel</option>
-            <option value="Pablo">Pablo</option>
-            <option value="Ricardo">Ricardo</option>
+            <option value="Daniel" id="0">Daniel</option>
+            <option value="Pablo" id="1">Pablo</option>
+            <option value="Ricardo" id="2">Ricardo</option>
         </select>
-
         <select id="modelo">
-
         </select>
-
         <select id="puntuacion">
             <option value="true">Positivo</option>
             <option value="false">Negativo</option>
 
         </select>
+        <textarea id="opinion" cols="30" rows="10"></textarea>
+        <button id="votar">Votar</button>
+    </div>
+
+    <div id="funcion2">
+        <select id="usuario1">
+            <option value="_"></option>
+            <option value="Daniel" id="0">Daniel</option>
+            <option value="Pablo" id="1">Pablo</option>
+            <option value="Ricardo" id="2">Ricardo</option>
+
+        </select>
+        <div id="resultado"></div>
     </div>
 </body>
 
