@@ -27,6 +27,10 @@ class voto {
     }
     get cachimba() { return this._cachimba; }
     get persona() { return this._persona; }
+    get puntuacion() { return this._puntuacion; }
+    get observaciones() { return this._observaciones; }
+    set puntuacion(puntuacion) { this._puntuacion = puntuacion; }
+    set observaciones(observaciones) { this._observaciones = observaciones; }
     set cachimba(cachimba) { this._cachimba = cachimba; }
     set persona(persona) { this._persona = persona; }
 }
@@ -91,19 +95,18 @@ let voto1 = new voto(persona1, cachimba1, true, "Muy bonita");
 
 let voto2 = new voto(persona2, cachimba2, false, "Muy fea");
 
-
 let voto3 = new voto(persona3, cachimba3, true, "Elegante");
-
 
 let voto4 = new voto(persona1, cachimba4, true, "Exquisita");
 
-
 let voto5 = new voto(persona2, cachimba4, false, "Horrorosa");
+
+let voto6 = new voto(persona2, cachimba13, true, "Tremebunda");
 
 
 let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10, cachimba11, cachimba12, cachimba13, cachimba14, cachimba15, cachimba16, cachimba17];
 let listaPersona = [persona1, persona2, persona3];
-let listaVoto = [voto1, voto2, voto3, voto4, voto5];
+let listaVoto = [voto1, voto2, voto3, voto4, voto5, voto6];
 
 function crearVoto(persona, cachimba, puntuacion, observaciones) {
     let voto = new Voto(persona, cachimba, puntuacion, observaciones);

@@ -25,21 +25,43 @@
         En esta funcion vamos a sacar 10 cachimbas de la marca Kaya con un precio superior a 30 €
 
     * Función que deba obtener el elemento mejor valorado y además que cumpla varios requisitos a la vez. 
+        El mejor valorado de una marca concreta
 
     * Función que ordene los elementos según el campo especificado.
+        oredena todas las cachimbas por precio de menor a mayor
+
 
     * Una función definida por el alumno y que encaje en la funcionalidad de la página. -->
 
     <div id="funcion1">
         <label for="nombre">Precio</label>
         <input type="text" id="precio">
-        <div id="erroresPrecio"></div>
         <label for="marca">Marca</label>
         <input type="text" id="marca">
-        <div id="erroresMarca"></div>
+        <div id="resultado"></div>
 
         <button id="buscar1">Buscar</button>
+    </div>
 
+    <div id="funcion2">
+        <span>El mejor valorado de una marca</span>
+        <label for="marca"></label>
+        <select id="marcaValorada">
+            <option value="Kaya">Kaya</option>
+            <option value="Khalil-mamoon">khalil-mamoon</option>
+            <option value="Caesar">Caesar</option>
+            <option value="Mig">Mig</option>
+            <option value="Starbuzz">Starbuzz</option>
+        </select>
+        <div id="resultado2"></div>
+
+        <button id="buscar2">Buscar</button>
+    </div>
+
+    <div id="funcion3">
+        <span>Ordenar por precio de menor a mayor</span>
+        <div id="resultado3"></div>
+        <button id="buscar3">Ordenar por precio</button>
     </div>
 
 
