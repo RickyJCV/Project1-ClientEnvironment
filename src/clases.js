@@ -77,8 +77,15 @@ let cachimba5 = new cachimba("60", "Caesar", "C36");
 let cachimba6 = new cachimba("30", "Caesar", "C67");
 let cachimba7 = new cachimba("80", "Kaya", "PN480");
 let cachimba8 = new cachimba("100", "Starbuzz", "Challenger");
-let cachimba9 = new cachimba("155", "Kaya", "PN330");
-let cachimba10 = new cachimba("68", "Starbuzz", "Ultimate");
+let cachimba9 = new cachimba("35", "Kaya", "PN330");
+let cachimba10 = new cachimba("40", "Kaya", "Magis");
+let cachimba11 = new cachimba("45", "Kaya", "Benbe");
+let cachimba12 = new cachimba("55", "Kaya", "Sarabia");
+let cachimba13 = new cachimba("60", "Kaya", "Wakaso");
+let cachimba14 = new cachimba("68", "Kaya", "Cescs");
+let cachimba15 = new cachimba("70", "Kaya", "Univc");
+let cachimba16 = new cachimba("55", "Kaya", "Vaclick");
+let cachimba17 = new cachimba("57", "Kaya", "Sarabia");
 
 let voto1 = new voto(persona1, cachimba1, true, "Muy bonita");
 
@@ -94,7 +101,7 @@ let voto4 = new voto(persona1, cachimba4, true, "Exquisita");
 let voto5 = new voto(persona2, cachimba4, false, "Horrorosa");
 
 
-let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10];
+let listadoCachimbas = [cachimba1, cachimba2, cachimba3, cachimba4, cachimba5, cachimba6, cachimba7, cachimba8, cachimba9, cachimba10, cachimba11, cachimba12, cachimba13, cachimba14, cachimba15, cachimba16, cachimba17];
 let listaPersona = [persona1, persona2, persona3];
 let listaVoto = [voto1, voto2, voto3, voto4, voto5];
 
