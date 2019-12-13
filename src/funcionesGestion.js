@@ -1,6 +1,8 @@
-$(function () {
+$(function() {
     $("#buscar1").click(filtrarElementos);
     $("#buscar2").click(filtrarMejorValorado);
+    $("#buscar3").click(ordenarPrecio);
+    $("#buscar4").click(ordenarMarca);
 });
 
 function filtrarElementos() {
@@ -14,9 +16,9 @@ function filtrarElementos() {
         }
     }
 }
+
 function filtrarMejorValorado() {
     let inputMarca = $("#marcaValorada").val();
-    console.log(inputMarca);
     $("#resultado2").empty();
 
     for (let i = 0; i < listaVoto.length; i++) {
@@ -27,6 +29,36 @@ function filtrarMejorValorado() {
         }
     }
 
+}
 
+function ordenarPrecio() {
+    $("#resultado3").empty();
+    listadoCachimbas.sort(function(o1, o2) {
+        if (parseInt(o1.precio) > parseInt(o2.precio)) {
+            return 1;
+        } else if (parseInt(o1.precio) < parseInt(o2.precio)) {
+            return -1;
+        }
+        return 0;
+    });
+    for (i = 0; i < listadoCachimbas.length; i++) {
+        let span = $("<span>" + listadoCachimbas[i].marca + " " + listadoCachimbas[i].modelo + " " + listadoCachimbas[i].precio + "€</span><br>");
+        $("#resultado3").append(span);
+    }
+}
 
+function ordenarMarca() {
+    $("#resultado4").empty();
+    listadoCachimbas.sort(function(o1, o2) {
+        if (o1.marca > o2.marca) {
+            return 1;
+        } else if (o1.marca < o2.marca) {
+            return -1;
+        }
+        return 0;
+    });
+    for (i = 0; i < listadoCachimbas.length; i++) {
+        let span = $("<span>" + listadoCachimbas[i].marca + " " + listadoCachimbas[i].modelo + " " + listadoCachimbas[i].precio + "€</span><br>");
+        $("#resultado4").append(span);
+    }
 }
