@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="clases.js"></script>
+    <link rel="stylesheet" href="estiloNav.css">
+    <script src="funcionesGestion.js"></script>
+    <script src="funcionesUsuario.js"></script>
+</head>
+<!--*
+    Página del Usuario:
+    * Función que permita a un usuario votar y opinar sobre el elemento.
+    * Función que permitar obtener los elementos que ha votado un usuario.
+    * Función que obtenga los elementos similares a los elementos favoritos del usuario.
+    * Una función definida por el alumno y que encaje en la funcionalidad de la página. -->
+
+<body>
+    <ul class="listaDesord">
+        <li class="lista"><a href="index.html">Búsqueda</a></li>
+        <li class="lista"><a href="edit.html">Edición</a></li>
+        <li class="lista"><a href="gestion.html">Gestión</a></li>
+        <li class="lista"><a href="usuario.html" class="active">Usuario</a></li>
+    </ul>
+    <div id="funcion1">
+
+        <select id="usuario">
+            <option value="Daniel">Daniel</option>
+            <option value="Pablo">Pablo</option>
+            <option value="Ricardo">Ricardo</option>
+        </select>
+
+        <select id="modelo">
+
+        </select>
+
+        <select id="puntuacion">
+            <option value="true">Positivo</option>
+            <option value="false">Negativo</option>
+
+        </select>
+    </div>
+</body>
+
+</html>
