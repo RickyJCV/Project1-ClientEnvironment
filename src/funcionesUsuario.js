@@ -2,6 +2,8 @@ $(function () {
     rellenarModelos();
     $("#votar").click(votarCachimba);
     $("#usuario1").change(filtrarVoto);
+    $("#usuario2").change(filtrarVotosPositivos);
+    $("#usuario3").change(mostrarDatosUsuario);
 });
 
 function rellenarModelos() {
@@ -21,6 +23,7 @@ function votarCachimba() {
     crearVoto(listaPersona[id], listadoCachimbas[idModelo], inputPuntuacion, textArea);
     alert("Voto añadido correctamente")
 }
+
 function filtrarVoto() {
     $("#resultado").empty();
     let inputUsuario = $("#usuario1").val();
@@ -31,6 +34,36 @@ function filtrarVoto() {
             console.log(listaVoto[i].cachimba.modelo)
             let span = $("<span>" + listaVoto[i].cachimba.modelo + " " + listaVoto[i].observaciones + "</span><br>");
             $("#resultado").append(span);
+        }
+    }
+}
+
+function filtrarVotosPositivos() {
+    $("#resultado2").empty();
+    let inputUsuario = $("#usuario2").val();
+    var id = $("#usuario2").children(":selected").attr("id");
+
+    for (let i = 0; i < listaVoto.length; i++) {
+        if (listaVoto[i].persona.nombre === inputUsuario) {
+            for (let j = 0; j < listadoCachimbas.length; j++) {
+                if (listaVoto[i].cachimba.marca === listadoCachimbas[j].marca) {
+                    let span = $("<span>" + listadoCachimbas[j].marca + " " + listadoCachimbas[j].modelo + "</span><br>");
+                    $("#resultado2").append(span);
+                }
+            }
+        }
+    }
+}
+
+function mostrarDatosUsuario() {
+    $("#resultado3").empty();
+    let inputUsuario = $("#usuario3").val();
+    var id = $("#usuario3").children(":selected").attr("id");
+
+    for (let i = 0; i < listaPersona.length; i++) {
+        if (listaPersona[i].nombre === inputUsuario) {
+            let span = $("<span>" + "Nombre: " + listaPersona[i].nombre + "<br>" + "Edad: " + listaPersona[i].edad + "<br>" + "Código Postal: " + listaPersona[i].codigoPostal + "</span><br>");
+            $("#resultado3").append(span);
         }
     }
 }
