@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $("#buscar1").click(filtrarElementos);
 });
 
