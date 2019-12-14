@@ -188,6 +188,7 @@ function cambiarUsuario() {
     listaVoto[id].persona = listaPersona[usuarios];
     filtrarVotos();
 
+    alert("Usuario cambiado");
 }
 
 function validarFormulario2(event) {
