@@ -5,9 +5,8 @@ $(function () {
     $("#buscar4").click(ordenarMarca);
     $("#precio").keyup(validarPrecio);
 });
-/* Función que obtenga 10 elementos que cumplan varios requisitos a la vez.
-    En esta funcion vamos a sacar 10 cachimbas de la marca Kaya con un precio superior a 30 €
-*/
+/** @description Función que valida el precio
+ */
 function validarPrecio() {
     let esCorrecto = true;
     let inputPrecio = $("#precio").val();
@@ -22,7 +21,9 @@ function validarPrecio() {
     }
     return esCorrecto;
 }
-
+/** @description Función que obtenga 10 elementos que cumplan varios requisitos a la vez.
+    En esta funcion vamos a sacar 10 cachimbas de la marca Kaya con un precio superior a 30 €
+ */
 function filtrarElementos() {
     let inputPrecio = $("#precio").val();
     let inputMarca = $("#marca").val();
@@ -36,9 +37,10 @@ function filtrarElementos() {
         }
     }
 }
-/*  Función que deba obtener el elemento mejor valorado y además que cumpla varios requisitos a la vez. 
+
+/** @description Función que deba obtener el elemento mejor valorado y además que cumpla varios requisitos a la vez.
         El mejor valorado de una marca concreta
-*/
+ */
 function filtrarMejorValorado() {
     let inputMarca = $("#marcaValorada").val();
     $("#resultado2").empty();
@@ -49,9 +51,10 @@ function filtrarMejorValorado() {
         }
     }
 }
-/*  Función que ordene los elementos según el campo especificado.
+
+/** @description Función que ordene los elementos según el campo especificado.
         oredena todas las cachimbas por precio de menor a mayor
-*/
+ */
 function ordenarPrecio() {
     $("#resultado3").empty();
     listadoCachimbas.sort(function (o1, o2) {
@@ -67,9 +70,10 @@ function ordenarPrecio() {
         $("#resultado3").append(span);
     }
 }
-/* Una función definida por el alumno y que encaje en la funcionalidad de la página. 
-        ordenar alfabeticamente por marca-->
-*/
+
+/** @description Una función definida por el alumno y que encaje en la funcionalidad de la página.
+        ordenar alfabeticamente por marca
+ */
 function ordenarMarca() {
     $("#resultado4").empty();
     listadoCachimbas.sort(function (o1, o2) {

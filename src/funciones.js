@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let botonEnviar = document.getElementById("buscar");
     botonEnviar.addEventListener("click", filtroMarcaPrecio);
     let botonSimilar = document.getElementById("buscarMarcaSimilar");
@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
     botonPrecio.addEventListener("click", filtrarPrecio);
 
 })
-
+/** @description Filtra por marca y precio
+ * @param {String} marca
+ * @param {Int} precio
+ */
 function filtroMarcaPrecio(marca, precio) {
     let lista_cachimbas = document.getElementById("lista_cachimbas");
     lista_cachimbas.innerHTML = "";
@@ -43,7 +46,9 @@ function filtroMarcaPrecio(marca, precio) {
     }
 
 }
-
+/** @description Muestra articulos similares según la marca pasada
+ * @param {String} marca
+ */
 function listaSimilar(marca) {
     let lista_similar = document.getElementById("lista_similar");
     let inputMarca = document.getElementById("marca2").value;
@@ -57,7 +62,9 @@ function listaSimilar(marca) {
         lista_similar.appendChild(liCachimba);
     }
 }
-
+/** @description Muestra los votos de un usuario
+ * @param {String} usuario
+ */
 function votosUsuario(usuario) {
     let lista_de_votos = document.getElementById("lista_de_votos"); //Donde voy a pintarlo
     let inputPersona = document.getElementById("persona").value; //El input del nombre
@@ -77,7 +84,9 @@ function votosUsuario(usuario) {
         lista_de_votos.appendChild(liVoto);
     }
 }
-
+/** @description Muestra los artículos filtrados por un precio inferior
+ * @param {Int} precio
+ */
 function filtrarPrecio(precio) {
     let lista_de_precio = document.getElementById("lista_de_precio"); //Donde voy a pintarlo
     let inputPrecio = document.getElementById("precio2").value; //El input del nombre

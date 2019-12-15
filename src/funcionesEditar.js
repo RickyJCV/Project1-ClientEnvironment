@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let botonCrearElemento = document.getElementById("crearElemento2");
     botonCrearElemento.addEventListener("click", validarFormulario);
 
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let codigo = document.getElementById("codigo");
     codigo.addEventListener("keyup", validarCodigo);
 })
-
+/** @description Crea una cachimba
+ */
 function crearElemento() {
     let inputPrecio = document.getElementById("precio").value; //El input del precio
     let inputMarca = document.getElementById("marca").value; //El input de marca
@@ -39,7 +40,8 @@ function crearElemento() {
     alert("CACHIMBA CREADA");
 
 }
-
+/** @description Crea un usuario
+ */
 function crearUsuario() {
     let inputNombre = document.getElementById("nombre").value; //El input del precio
     let inputEdad = document.getElementById("edad").value; //El input de marca
@@ -50,7 +52,9 @@ function crearUsuario() {
     alert("USUARIO CREADO");
 
 }
-
+/** @description Valida el precio
+ * @param {event} event
+ */
 function validarPrecio(event) {
     let esCorrecto = true;
     let inputPrecio = document.getElementById("precio");
@@ -79,7 +83,9 @@ function validarPrecio(event) {
     }
     return esCorrecto;
 }
-
+/** @description Valida una marca
+ * @param {event} event
+ */
 function validarMarca(event) {
     let esCorrecto = true;
     let inputMarca = document.getElementById("marca");
@@ -102,7 +108,9 @@ function validarMarca(event) {
     }
     return esCorrecto;
 }
-
+/** @description Valida el modelo
+ * @param {event} event
+ */
 function validarModelo(event) {
     let esCorrecto = true;
     let inputModelo = document.getElementById("modelo");
@@ -125,7 +133,9 @@ function validarModelo(event) {
     }
     return esCorrecto;
 }
-
+/** @description Valida un formulario
+ * @param {event} event
+ */
 function validarFormulario(event) {
     event.preventDefault();
 
@@ -142,7 +152,8 @@ function validarFormulario(event) {
         crearElemento();
     }
 }
-
+/** @description Muestra los votos
+ */
 function filtrarVotos() {
     let borrar = document.getElementById("votos");
     if (borrar.hasChildNodes()) {
@@ -178,7 +189,8 @@ function filtrarVotos() {
     }
 
 }
-
+/** @description Cambia un usuario por otro
+ */
 function cambiarUsuario() {
     let votos = document.getElementById("votos");
     let usuario = document.getElementById("usuario");
@@ -190,7 +202,9 @@ function cambiarUsuario() {
 
     alert("Usuario cambiado");
 }
-
+/** @description Valida un formulario
+ * @param {event} event
+ */
 function validarFormulario2(event) {
     event.preventDefault();
 
@@ -208,7 +222,8 @@ function validarFormulario2(event) {
     }
 }
 
-
+/** @description Valida un nombre
+ */
 function validarNombre() {
     let esCorrecto = true;
     let nombre = document.getElementById("nombre");
@@ -231,7 +246,8 @@ function validarNombre() {
     }
     return esCorrecto;
 }
-
+/** @description Valida un codigo postal
+ */
 function validarCodigo() {
     let esCorrecto = true;
     let codigo = document.getElementById("codigo");
@@ -256,7 +272,8 @@ function validarCodigo() {
     }
     return esCorrecto;
 }
-
+/** @description Valida la edad
+ */
 function validarEdad(event) {
     let esCorrecto = true;
     let edad = document.getElementById("edad");

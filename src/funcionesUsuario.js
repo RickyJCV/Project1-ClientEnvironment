@@ -5,7 +5,8 @@ $(function () {
     $("#usuario2").change(filtrarVotosPositivos);
     $("#usuario3").change(mostrarDatosUsuario);
 });
-
+/** @description Rellena los modelos de cachimbas
+ */
 function rellenarModelos() {
 
     for (let i = 0; i < listadoCachimbas.length; i++) {
@@ -13,6 +14,8 @@ function rellenarModelos() {
         $("#modelo").append(span);
     }
 }
+/** @description Una función que sirve para votar por una cachimba
+ */
 function votarCachimba() {
     let inputUsuario = $("#usuario").val();
     let inputModelo = $("#modelo").val();
@@ -23,7 +26,8 @@ function votarCachimba() {
     crearVoto(listaPersona[id], listadoCachimbas[idModelo], inputPuntuacion, textArea);
     alert("Voto añadido correctamente")
 }
-
+/** @description Una función que filtra por los votos
+ */
 function filtrarVoto() {
     $("#resultado").empty();
     let inputUsuario = $("#usuario1").val();
@@ -37,7 +41,8 @@ function filtrarVoto() {
         }
     }
 }
-
+/** @description Una función que filtra por los votos positivos
+ */
 function filtrarVotosPositivos() {
     $("#resultado2").empty();
     let inputUsuario = $("#usuario2").val();
@@ -54,7 +59,8 @@ function filtrarVotosPositivos() {
         }
     }
 }
-
+/** @description Una función muestra los datos de un usuario
+ */
 function mostrarDatosUsuario() {
     $("#resultado3").empty();
     let inputUsuario = $("#usuario3").val();
