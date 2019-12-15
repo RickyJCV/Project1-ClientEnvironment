@@ -1,72 +1,72 @@
 class cachimba {
-    constructor(precio, marca, modelo) {
-        this._precio = precio;
-        this._marca = marca;
-        this._modelo = modelo;
-        this._votos = []; //Es un Array de la clase lista de votos
-    }
-    get precio() { return this._precio; }
-    get marca() { return this._marca; }
-    get modelo() { return this._modelo; }
-    get() { return this._votos; }
-    set precio(precio) { this._precio = precio; }
-    set marca(marca) { this._marca = marca; }
-    set modelo(modelo) { this._modelo = modelo; }
-    set(votos) { this._votos = votos; }
-    addVoto(voto) {
-        this._votos.push(voto);
-    }
+	constructor(precio, marca, modelo) {
+		this._precio = precio;
+		this._marca = marca;
+		this._modelo = modelo;
+		this._votos = []; //Es un Array de la clase lista de votos
+	}
+	get precio() { return this._precio; }
+	get marca() { return this._marca; }
+	get modelo() { return this._modelo; }
+	get() { return this._votos; }
+	set precio(precio) { this._precio = precio; }
+	set marca(marca) { this._marca = marca; }
+	set modelo(modelo) { this._modelo = modelo; }
+	set(votos) { this._votos = votos; }
+	addVoto(voto) {
+		this._votos.push(voto);
+	}
 }
 
 class voto {
-    constructor(persona, cachimba, puntuacion, observaciones) {
-        this._cachimba = cachimba;
-        this._persona = persona; //Aqui le pasamos el array de persona
-        this._puntuacion = puntuacion;
-        this._observaciones = observaciones;
-    }
-    get cachimba() { return this._cachimba; }
-    get persona() { return this._persona; }
-    get puntuacion() { return this._puntuacion; }
-    get observaciones() { return this._observaciones; }
-    set puntuacion(puntuacion) { this._puntuacion = puntuacion; }
-    set observaciones(observaciones) { this._observaciones = observaciones; }
-    set cachimba(cachimba) { this._cachimba = cachimba; }
-    set persona(persona) { this._persona = persona; }
+	constructor(persona, cachimba, puntuacion, observaciones) {
+		this._cachimba = cachimba;
+		this._persona = persona; //Aqui le pasamos el array de persona
+		this._puntuacion = puntuacion;
+		this._observaciones = observaciones;
+	}
+	get cachimba() { return this._cachimba; }
+	get persona() { return this._persona; }
+	get puntuacion() { return this._puntuacion; }
+	get observaciones() { return this._observaciones; }
+	set puntuacion(puntuacion) { this._puntuacion = puntuacion; }
+	set observaciones(observaciones) { this._observaciones = observaciones; }
+	set cachimba(cachimba) { this._cachimba = cachimba; }
+	set persona(persona) { this._persona = persona; }
 }
 
 class persona {
-    constructor(nombre, edad, codigoPostal) {
-        this._nombre = nombre;
-        this._edad = edad;
-        this._codigoPostal = codigoPostal;
-        this._votos = [];
-    }
-    get nombre() { return this._nombre; }
-    get edad() { return this._edad; }
-    get codigoPostal() { return this._codigoPostal; }
-    set nombre(nombre) { this._nombre = nombre; }
-    set edad(edad) { this._edad = edad; }
-    set codigoPostal(codigoPostal) { this._codigoPostal = codigoPostal; }
-    set(votos) { this._votos = votos; }
-    addVoto(voto) {
-        this._votos.push(voto);
-    }
+	constructor(nombre, edad, codigoPostal) {
+		this._nombre = nombre;
+		this._edad = edad;
+		this._codigoPostal = codigoPostal;
+		this._votos = [];
+	}
+	get nombre() { return this._nombre; }
+	get edad() { return this._edad; }
+	get codigoPostal() { return this._codigoPostal; }
+	set nombre(nombre) { this._nombre = nombre; }
+	set edad(edad) { this._edad = edad; }
+	set codigoPostal(codigoPostal) { this._codigoPostal = codigoPostal; }
+	set(votos) { this._votos = votos; }
+	addVoto(voto) {
+		this._votos.push(voto);
+	}
 
 }
 
 class tienda {
-    constructor(cachimbas, direccion, ceo) {
-        this._cachimbas = [];
-        this._direccion = direccion;
-        this._ceo = ceo;
-    }
-    get cachimbas() { return this._cachimbas; }
-    get direccion() { return this._direccion; }
-    get ceo() { return this._ceo; }
-    set cachimbas(cachimbas) { this._cachimbas = cachimbas; }
-    set direccion(direccion) { this._direccion = direccion; }
-    set ceo(ceo) { this._ceo = ceo; }
+	constructor(cachimbas, direccion, ceo) {
+		this._cachimbas = [];
+		this._direccion = direccion;
+		this._ceo = ceo;
+	}
+	get cachimbas() { return this._cachimbas; }
+	get direccion() { return this._direccion; }
+	get ceo() { return this._ceo; }
+	set cachimbas(cachimbas) { this._cachimbas = cachimbas; }
+	set direccion(direccion) { this._direccion = direccion; }
+	set ceo(ceo) { this._ceo = ceo; }
 }
 
 let persona1 = new persona("Daniel", 23, "41020");
@@ -109,18 +109,18 @@ let listaPersona = [persona1, persona2, persona3];
 let listaVoto = [voto1, voto2, voto3, voto4, voto5, voto6];
 
 function crearVoto(persona, cachimba, puntuacion, observaciones) {
-    let Voto = new voto(persona, cachimba, puntuacion, observaciones);
-    persona.addVoto(Voto);
-    cachimba.addVoto(Voto);
-    listaVoto.push(Voto);
+	let Voto = new voto(persona, cachimba, puntuacion, observaciones);
+	persona.addVoto(Voto);
+	cachimba.addVoto(Voto);
+	listaVoto.push(Voto);
 }
 
 function crearCachimba(precio, marca, modelo) {
-    let Cachimba = new cachimba(precio, marca, modelo)
-    listadoCachimbas.push(Cachimba);
+	let Cachimba = new cachimba(precio, marca, modelo);
+	listadoCachimbas.push(Cachimba);
 }
 
 function crearPersona(nombre, edad, codigoPostal) {
-    let Persona = new persona(nombre, edad, codigoPostal);
-    listaPersona.push(Persona);
+	let Persona = new persona(nombre, edad, codigoPostal);
+	listaPersona.push(Persona);
 }
